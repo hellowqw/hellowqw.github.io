@@ -273,6 +273,945 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2018/04/08/广告大后台接口文档/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/08/广告大后台接口文档/" itemprop="url">未命名</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-08T13:03:28+08:00">
+                2018-04-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h2><p>所有接口返回格式统一为JSON</p>
+<p> 201 登录状态失效</p>
+<p> 202 返回无数据  接口传入数据错误</p>
+<p> 200 成功返回</p>
+<p> 访问本地连接：<a href="http://192.168.1.163:8080/ad_project/index.php" target="_blank" rel="noopener">http://192.168.1.163:8080/ad_project/index.php</a></p>
+<h2 id="1-广告主列表接口"><a href="#1-广告主列表接口" class="headerlink" title="1. 广告主列表接口"></a>1. 广告主列表接口</h2><p> 请求URL:/Main/action/User/User_public/user_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|id|int|YES|唯一id|<br>|phone|String|YES|账户|<br>|payee|STRING|YES|企业个人账户名称|<br>|balance|STRING|YES|现金余额|<br>|virtual_balance|STRING|YES|虚拟余额|<br>|money|STRING|YES|账号余额|<br>|appraisal|Int|YES|认证0未认证1审核中 2已认证|<br>|appraisal_type|Int|YES|认证类型1企业2个人|</p>
+<h2 id="2-查看认证资料接口"><a href="#2-查看认证资料接口" class="headerlink" title="2. 查看认证资料接口"></a>2. 查看认证资料接口</h2><p> 请求URL:/Main/action/User/User_public/attestation</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户唯一id</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|id|int|YES|唯一id|<br>|payee|STRING|YES|企业个人账户名称|<br>|appraisal_type|Int|YES|认证类型1企业2个人|<br>|appraisal|Int|YES|认证0未认证1审核中 2已认证|<br>|id_card_face|STRING|YES|法人身份证正面|<br>|id_card_back|STRING|YES|法人身份证背面|<br>|business_license|STRING|YES|营业执照|<br>|id_card_hand|Int|YES|手持身份证|</p>
+<h2 id="3-用户认证处理接口"><a href="#3-用户认证处理接口" class="headerlink" title="3. 用户认证处理接口"></a>3. 用户认证处理接口</h2><p> 请求URL:/Main/action/User/User_public/operate_attestation</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户唯一id</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">1认证成功 2认证失败</td>
+</tr>
+<tr>
+<td style="text-align:left">comment</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">认证失败发送消息</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-查看用户资质接口"><a href="#4-查看用户资质接口" class="headerlink" title="4. 查看用户资质接口"></a>4. 查看用户资质接口</h2><p> 请求URL:/Main/action/User/User_public/getCredibleList</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户唯一id</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">payee</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">企业个人账户名称</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|name|STRING|YES|资质名称|<br>|image|STRING|YES|代言资质图片|</p>
+<h2 id="5-广告主名称列表接口"><a href="#5-广告主名称列表接口" class="headerlink" title="5. 广告主名称列表接口"></a>5. 广告主名称列表接口</h2><p> 请求URL:/Main/action/User/User_public/username_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|uid|int|YES|用户id|<br>|payee|STRING|YES|企业个人账户名称|</p>
+<h2 id="6-用户充值接口"><a href="#6-用户充值接口" class="headerlink" title="6. 用户充值接口"></a>6. 用户充值接口</h2><p> 请求URL:/Main/action/User/User_public/user_recharge</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">uid</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">用户id</td>
+</tr>
+<tr>
+<td style="text-align:left">balance</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">现金金额</td>
+</tr>
+<tr>
+<td style="text-align:left">virtual_balance</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">虚拟金额</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-媒体主列表接口"><a href="#7-媒体主列表接口" class="headerlink" title="7. 媒体主列表接口"></a>7. 媒体主列表接口</h2><p> 请求URL:/Main/action/User/User_public/usermedia_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|id|int|YES|唯一id|<br>|phone|String|YES|账户|<br>|payee|STRING|YES|企业个人账户名称|<br>|balance|STRING|YES|余额|<br>|divide_rate|STRING|YES|分成率|<br>|appraisal|Int|YES|认证0未认证1审核中 2已认证|<br>|appraisal_type|Int|YES|认证类型1企业2个人|</p>
+<h2 id="8-应用列表接口"><a href="#8-应用列表接口" class="headerlink" title="8. 应用列表接口"></a>8. 应用列表接口</h2><p> 请求URL:/Main/action/Media_application/Application/applicationList</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|id|Int|YES|唯一id|<br>|payee|String|YES|账户名称|<br>|app_key|String|YES|应用Id|<br>|name|STRING|YES|应用名称|<br>|createTime|STRING|YES|创建时间|<br>|category|STRING|YES|应用行业|<br>|system_appkey|STRING|YES|绑定appkey|<br>|status|Int|YES|应用状态1启用2停用|<br>|businessStatus|Int|YES|业务状态1未审核 2正常 3审核不通过|</p>
+<h2 id="9-修改媒体启动状态"><a href="#9-修改媒体启动状态" class="headerlink" title="9.修改媒体启动状态"></a>9.修改媒体启动状态</h2><p> 请求URL:/Main/action/Media_application/Application/updateStatus</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">appKey</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">appKey</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">1启动 2暂停</td>
+</tr>
+<tr>
+<td style="text-align:left">business_status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">2审核通过 3审核不通过</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-分成列表接口"><a href="#10-分成列表接口" class="headerlink" title="10. 分成列表接口"></a>10. 分成列表接口</h2><p> 请求URL:/Main/action/Divide/Divide/divide_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|id|Int|YES|唯一id|<br>|name|STRING|YES|分成名称|<br>|createTime|STRING|YES|创建时间|<br>|divide_rate|STRING|YES|分成比例|<br>|remark|STRING|YES|备注|<br>|status|Int|YES|应用状态0启用1关闭|<br>|type|Int|YES|分成类型|</p>
+<h2 id="11-分成选择媒体列表"><a href="#11-分成选择媒体列表" class="headerlink" title="11. 分成选择媒体列表"></a>11. 分成选择媒体列表</h2><p> 请求URL:/Main/action/Divide/Divide/media_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成id id =空待选状态    ！=空 已分配分成媒体</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|code|INT|YES|返回状态码200成功202失败|<br>|msg|STRING|YES|状态说明|<br>|data|array|YES|数组|</p>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|payee|STRING|YES|媒体名称|<br>|uid|int|YES|媒体id|</p>
+<h2 id="12-分成添加接口"><a href="#12-分成添加接口" class="headerlink" title="12. 分成添加接口"></a>12. 分成添加接口</h2><p> 请求URL:/Main/action/Divide/Divide/add_divide</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成名称</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_rate</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成比率</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">备注</td>
+</tr>
+<tr>
+<td style="text-align:left">uidArr</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">选择媒体用户id , 格式12,32,32</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|code|INT|YES|返回状态码200成功202失败|<br>|msg|STRING|YES|状态说明|<br>|data|array|YES|数组|</p>
+<h2 id="13-分成编辑查询接口"><a href="#13-分成编辑查询接口" class="headerlink" title="13. 分成编辑查询接口"></a>13. 分成编辑查询接口</h2><p> 请求URL:/Main/action/Divide/Divide/divide_info</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成id</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|code|INT|YES|返回状态码200成功202失败|<br>|msg|STRING|YES|状态说明|<br>|data|array|YES|数组|</p>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|name|STRING|YES|分成名称|<br>|divide_rate|int|YES|分成比例|<br>|remark|string|YES|备注|</p>
+<h2 id="14-分成修改接口"><a href="#14-分成修改接口" class="headerlink" title="14. 分成修改接口"></a>14. 分成修改接口</h2><p> 请求URL:/Main/action/Divide/Divide/divide_updata</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成id</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成名称</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_rate</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成比率</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">备注</td>
+</tr>
+<tr>
+<td style="text-align:left">uidArr</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">选择媒体用户id , 格式12,32,32</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|code|INT|YES|返回状态码200成功202失败|<br>|msg|STRING|YES|状态说明|<br>|data|array|YES|数组|</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2018/04/08/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -388,6 +1327,2541 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2018/04/03/接口/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/03/接口/" itemprop="url">接口</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-03T13:39:28+08:00">
+                2018-04-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h2 id="备注："><a href="#备注：" class="headerlink" title="备注："></a>备注：</h2><p>所有接口返回格式统一为JSON</p>
+<p> 201 登录状态失效</p>
+<p> 202 返回无数据  接口传入数据错误</p>
+<p> 200 成功返回</p>
+<p> 访问本地连接：<a href="http://192.168.1.163:8080/ad_project/index.php" target="_blank" rel="noopener">http://192.168.1.163:8080/ad_project/index.php</a></p>
+<h2 id="1-广告主列表接口"><a href="#1-广告主列表接口" class="headerlink" title="1. 广告主列表接口"></a>1. 广告主列表接口</h2><p> 请求URL:/Main/action/User/User_public/user_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|id|int|YES|唯一id|<br>|phone|String|YES|账户|<br>|payee|STRING|YES|企业个人账户名称|<br>|balance|STRING|YES|现金余额|<br>|virtual_balance|STRING|YES|虚拟余额|<br>|money|STRING|YES|账号余额|<br>|appraisal|Int|YES|认证0未认证1审核中 2已认证|<br>|appraisal_type|Int|YES|认证类型1企业2个人|</p>
+<h2 id="2-查看认证资料接口"><a href="#2-查看认证资料接口" class="headerlink" title="2. 查看认证资料接口"></a>2. 查看认证资料接口</h2><p> 请求URL:/Main/action/User/User_public/attestation</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户唯一id</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|id|int|YES|唯一id|<br>|payee|STRING|YES|企业个人账户名称|<br>|appraisal_type|Int|YES|认证类型1企业2个人|<br>|appraisal|Int|YES|认证0未认证1审核中 2已认证|<br>|id_card_face|STRING|YES|法人身份证正面|<br>|id_card_back|STRING|YES|法人身份证背面|<br>|business_license|STRING|YES|营业执照|<br>|id_card_hand|Int|YES|手持身份证|</p>
+<h2 id="3-用户认证处理接口"><a href="#3-用户认证处理接口" class="headerlink" title="3. 用户认证处理接口"></a>3. 用户认证处理接口</h2><p> 请求URL:/Main/action/User/User_public/operate_attestation</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户唯一id</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">1认证成功 2认证失败</td>
+</tr>
+<tr>
+<td style="text-align:left">comment</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">认证失败发送消息</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-查看用户资质接口"><a href="#4-查看用户资质接口" class="headerlink" title="4. 查看用户资质接口"></a>4. 查看用户资质接口</h2><p> 请求URL:/Main/action/User/User_public/getCredibleList</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户唯一id</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">payee</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">企业个人账户名称</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|name|STRING|YES|资质名称|<br>|image|STRING|YES|代言资质图片|</p>
+<h2 id="5-广告主名称列表接口"><a href="#5-广告主名称列表接口" class="headerlink" title="5. 广告主名称列表接口"></a>5. 广告主名称列表接口</h2><p> 请求URL:/Main/action/User/User_public/username_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：<br>|名称|类型|是否必填|说明|<br>|:—|:—|:—|:—|<br>|uid|int|YES|用户id|<br>|payee|STRING|YES|企业个人账户名称|</p>
+<h2 id="6-用户充值接口"><a href="#6-用户充值接口" class="headerlink" title="6. 用户充值接口"></a>6. 用户充值接口</h2><p> 请求URL:/Main/action/User/User_public/user_recharge</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">uid</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">用户id</td>
+</tr>
+<tr>
+<td style="text-align:left">balance</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">现金金额</td>
+</tr>
+<tr>
+<td style="text-align:left">virtual_balance</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">虚拟金额</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+</tbody>
+</table>
+<h2 id="7-媒体主列表接口"><a href="#7-媒体主列表接口" class="headerlink" title="7. 媒体主列表接口"></a>7. 媒体主列表接口</h2><p> 请求URL:/Main/action/User/User_public/usermedia_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">唯一id</td>
+</tr>
+<tr>
+<td style="text-align:left">phone</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户</td>
+</tr>
+<tr>
+<td style="text-align:left">payee</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">企业个人账户名称</td>
+</tr>
+<tr>
+<td style="text-align:left">balance</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">余额</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_rate</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成率</td>
+</tr>
+<tr>
+<td style="text-align:left">appraisal</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">认证0未认证1审核中 2已认证</td>
+</tr>
+<tr>
+<td style="text-align:left">appraisal_type</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">认证类型1企业2个人</td>
+</tr>
+</tbody>
+</table>
+<h2 id="8-应用列表接口"><a href="#8-应用列表接口" class="headerlink" title="8. 应用列表接口"></a>8. 应用列表接口</h2><p> 请求URL:/Main/action/Media_application/Application/applicationList</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">唯一id</td>
+</tr>
+<tr>
+<td style="text-align:left">payee</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">账户名称</td>
+</tr>
+<tr>
+<td style="text-align:left">app_key</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">应用Id</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">应用名称</td>
+</tr>
+<tr>
+<td style="text-align:left">createTime</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">创建时间</td>
+</tr>
+<tr>
+<td style="text-align:left">category</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">应用行业</td>
+</tr>
+<tr>
+<td style="text-align:left">system_appkey</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">绑定appkey</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">应用状态1启用2停用</td>
+</tr>
+<tr>
+<td style="text-align:left">businessStatus</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">业务状态1未审核 2正常 3审核不通过</td>
+</tr>
+</tbody>
+</table>
+<h2 id="9-修改媒体启动状态"><a href="#9-修改媒体启动状态" class="headerlink" title="9.修改媒体启动状态"></a>9.修改媒体启动状态</h2><p> 请求URL:/Main/action/Media_application/Application/updateStatus</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">appKey</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">appKey</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">1启动 2暂停</td>
+</tr>
+<tr>
+<td style="text-align:left">business_status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">2审核通过 3审核不通过</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<h2 id="10-分成列表接口"><a href="#10-分成列表接口" class="headerlink" title="10. 分成列表接口"></a>10. 分成列表接口</h2><p> 请求URL:/Main/action/Divide/Divide/divide_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">总条数</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">唯一id</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成名称</td>
+</tr>
+<tr>
+<td style="text-align:left">createTime</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">创建时间</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_rate</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成比例</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">备注</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">应用状态0启用1关闭</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成类型</td>
+</tr>
+</tbody>
+</table>
+<h2 id="11-分成选择媒体列表"><a href="#11-分成选择媒体列表" class="headerlink" title="11. 分成选择媒体列表"></a>11. 分成选择媒体列表</h2><p> 请求URL:/Main/action/Divide/Divide/media_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成id id =空待选状态    ！=空 已分配分成媒体</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">payee</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">媒体名称</td>
+</tr>
+<tr>
+<td style="text-align:left">uid</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">媒体id</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12-分成添加接口"><a href="#12-分成添加接口" class="headerlink" title="12. 分成添加接口"></a>12. 分成添加接口</h2><p> 请求URL:/Main/action/Divide/Divide/add_divide</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成名称</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_rate</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成比率</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">备注</td>
+</tr>
+<tr>
+<td style="text-align:left">uidArr</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">选择媒体用户id , 格式12,32,32</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<h2 id="13-分成编辑查询接口"><a href="#13-分成编辑查询接口" class="headerlink" title="13. 分成编辑查询接口"></a>13. 分成编辑查询接口</h2><p> 请求URL:/Main/action/Divide/Divide/divide_info</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成id</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成名称</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_rate</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成比例</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">备注</td>
+</tr>
+</tbody>
+</table>
+<h2 id="14-分成修改接口"><a href="#14-分成修改接口" class="headerlink" title="14. 分成修改接口"></a>14. 分成修改接口</h2><p> 请求URL:/Main/action/Divide/Divide/divide_updata</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成id</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成名称</td>
+</tr>
+<tr>
+<td style="text-align:left">divide_rate</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分成比率</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">备注</td>
+</tr>
+<tr>
+<td style="text-align:left">uidArr</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">选择媒体用户id , 格式12,32,32</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<h2 id="15-素材列表接口"><a href="#15-素材列表接口" class="headerlink" title="15. 素材列表接口"></a>15. 素材列表接口</h2><p> 请求URL:/Main/action/Creative/Creative/creative_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">主键id</td>
+</tr>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">标题</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">名称</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">类型1横幅2插屏3信息流</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">高</td>
+</tr>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">宽</td>
+</tr>
+<tr>
+<td style="text-align:left">imgs</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">图片</td>
+</tr>
+<tr>
+<td style="text-align:left">audit_status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">审核状态1审核中2审核通过3审核拒绝</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">审核备注</td>
+</tr>
+</tbody>
+</table>
+<h2 id="16-修改素材审核状态"><a href="#16-修改素材审核状态" class="headerlink" title="16.修改素材审核状态"></a>16.修改素材审核状态</h2><p> 请求URL:/Main/action/Creative/Creative/updateStatus</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">素材id</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">no</td>
+<td style="text-align:left">2审核通过 3审核不通过</td>
+</tr>
+<tr>
+<td style="text-align:left">remark</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">审核备注</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<h2 id="17-小程序管理列表接口"><a href="#17-小程序管理列表接口" class="headerlink" title="17. 小程序管理列表接口"></a>17. 小程序管理列表接口</h2><p> 请求URL:/Main/action/App/App/app_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">主键id</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">小程序名称</td>
+</tr>
+<tr>
+<td style="text-align:left">app_id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">小程序id</td>
+</tr>
+<tr>
+<td style="text-align:left">bind</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">绑定小程序数量</td>
+</tr>
+<tr>
+<td style="text-align:left">follow_name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">公众号名称</td>
+</tr>
+</tbody>
+</table>
+<h2 id="18-小程序关联公众号列表接口"><a href="#18-小程序关联公众号列表接口" class="headerlink" title="18. 小程序关联公众号列表接口"></a>18. 小程序关联公众号列表接口</h2><p> 请求URL:/Main/action/App/App/app_follow_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+<tr>
+<td style="text-align:left">app_id</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">系统小程序id</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">主键id</td>
+</tr>
+<tr>
+<td style="text-align:left">follow_name</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">关联公众号名称</td>
+</tr>
+</tbody>
+</table>
+<h2 id="19-小程序审核列表接口"><a href="#19-小程序审核列表接口" class="headerlink" title="19. 小程序审核列表接口"></a>19. 小程序审核列表接口</h2><p> 请求URL:/Main/action/App/App/app_audit_list</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">分页条数默认20条</td>
+</tr>
+<tr>
+<td style="text-align:left">currentPage</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">页数</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">total</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+<p>data数据：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">主键id</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">小程序名称</td>
+</tr>
+<tr>
+<td style="text-align:left">app_id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">小程序appid</td>
+</tr>
+<tr>
+<td style="text-align:left">bind_app_id</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">绑定小程序id</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态:1审核中2已审核3审核失败</td>
+</tr>
+<tr>
+<td style="text-align:left">base_type</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">类型：1用户,2系统,3两者</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">小程序名称</td>
+</tr>
+</tbody>
+</table>
+<h2 id="20-小程序审核接口"><a href="#20-小程序审核接口" class="headerlink" title="20.小程序审核接口"></a>20.小程序审核接口</h2><p> 请求URL:/Main/action/App/App/updateStatus</p>
+<p> 请求方式：POST</p>
+<p> 请求参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">token</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">token</td>
+</tr>
+<tr>
+<td style="text-align:left">app_id</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">小程序id</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">yes</td>
+<td style="text-align:left">2审核通过 3审核不通过</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">是否必填</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">code</td>
+<td style="text-align:left">INT</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">返回状态码200成功202失败</td>
+</tr>
+<tr>
+<td style="text-align:left">msg</td>
+<td style="text-align:left">STRING</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">状态说明</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:left">array</td>
+<td style="text-align:left">YES</td>
+<td style="text-align:left">数组</td>
+</tr>
+</tbody>
+</table>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2017/10/30/hexo常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/30/hexo常用命令/" itemprop="url">hexo常用命令</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T20:49:52+08:00">
+                2017-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>hexo一些常用命令，简写等。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/30/hexo常用命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2017/08/27/将hexo主题next改成自己喜欢的样子/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/27/将hexo主题next改成自己喜欢的样子/" itemprop="url">将hexo主题next改成自己喜欢的样子</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T16:10:08+08:00">
+                2017-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>主要内容：<a href="#修改主题css样式">修改主题css样式</a>、<a href="#首页文章显示阅读全文">首页文章显示阅读全文</a>、<a href="#增加目录">增加目录</a><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/27/将hexo主题next改成自己喜欢的样子/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2017/08/27/我的hexo主题NexT-Mist配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/27/我的hexo主题NexT-Mist配置/" itemprop="url">我的hexo主题NexT.Mist配置</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T13:37:46+08:00">
+                2017-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="主题版本"><a href="#主题版本" class="headerlink" title="主题版本"></a>主题版本</h3><blockquote>
+<p>version: 5.1.2 </p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/27/我的hexo主题NexT-Mist配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2017/08/27/hexo-使用问题及解决方案汇总/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/27/hexo-使用问题及解决方案汇总/" itemprop="url">hexo 使用问题及解决方案汇总</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T12:51:51+08:00">
+                2017-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="hexo版本相关"><a href="#hexo版本相关" class="headerlink" title="hexo版本相关"></a>hexo版本相关</h3><p>hexo: 3.3.8<br>hexo-cli: 1.0.3<br>os: Windows_NT 10.0.15063 win32 x64<br>node: 8.2.1<br>next:5.1.2</p>
+<h3 id="hexo更改站点配置文件-title后网站标题无变化"><a href="#hexo更改站点配置文件-title后网站标题无变化" class="headerlink" title="hexo更改站点配置文件- title后网站标题无变化"></a>hexo更改站点配置文件- title后网站标题无变化</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/08/27/hexo-使用问题及解决方案汇总/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2017/08/23/Sublime插件：Markdown语法高亮/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/23/Sublime插件：Markdown语法高亮/" itemprop="url">Sublime插件：Markdown语法高亮</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T22:25:50+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="MarkDown-Editing-简介"><a href="#MarkDown-Editing-简介" class="headerlink" title="MarkDown Editing 简介"></a>MarkDown Editing 简介</h2><blockquote>
+<p>Markdown plugin for Sublime Text. Provides a decent Markdown color scheme (light and dark) with more robust syntax highlighting and useful Markdown editing features for Sublime Text. 3 flavors are supported: Standard Markdown, GitHub flavored Markdown, MultiMarkdown.<br>—— <a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="noopener">github-MarkDownEditing</a></p>
+</blockquote>
+<p>支持语法高亮；支持Github Favored Markdown语法；自带3个主题。</p>
+<h2 id="Sublime-Text-3-安装"><a href="#Sublime-Text-3-安装" class="headerlink" title="Sublime Text 3 安装"></a>Sublime Text 3 安装</h2><ol>
+<li>Ctrl + Shift + P -&gt; Install Package。</li>
+<li>键入Markdown editing  安装。</li>
+<li>安装完后重启Sublime即可。</li>
+</ol>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>performance -&gt;  package setting -&gt; MarkDown Editing -&gt; change color scheme</p>
+<p>更多配置可以移步<a href="https://github.com/SublimeText-Markdown/MarkdownEditing" target="_blank" rel="noopener">github-MarkDownEditing</a></p>
+<h2 id="相关：编辑器"><a href="#相关：编辑器" class="headerlink" title="相关：编辑器"></a>相关：编辑器</h2><p>几款知乎上评价很高的编辑器</p>
+<ul>
+<li><a href="https://www.zybuluo.com/cmd/" target="_blank" rel="noopener">Cmd Markdown</a> </li>
+<li><a href="https://www.madoko.net" target="_blank" rel="noopener">Madoko</a></li>
+<li><a href="http://chenguanzhou.github.io/MarkDownEditor/" target="_blank" rel="noopener">MarkdownPad2</a></li>
+<li><a href="https://typora.io/" target="_blank" rel="noopener">Typora</a></li>
+</ul>
+<p>一片不错的文档 <a href="https://zhuanlan.zhihu.com/p/24426967" target="_blank" rel="noopener">《一个码字工作者的正确书写发文姿势》</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -449,7 +3923,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -457,6 +3931,15 @@
 
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
