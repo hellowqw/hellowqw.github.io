@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Blacker">
 <meta property="og:description" content="hexo版本相关hexo: 3.3.8hexo-cli: 1.0.3os: Windows_NT 10.0.15063 win32 x64node: 8.2.1next:5.1.2 hexo更改站点配置文件- title后网站标题无变化">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-08T05:43:11.630Z">
+<meta property="og:updated_time" content="2018-04-08T05:49:54.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo 使用问题及解决方案汇总">
 <meta name="twitter:description" content="hexo版本相关hexo: 3.3.8hexo-cli: 1.0.3os: Windows_NT 10.0.15063 win32 x64node: 8.2.1next:5.1.2 hexo更改站点配置文件- title后网站标题无变化">
@@ -362,7 +362,16 @@
 <p>如果还是不可以，试试清除缓存。</p>
 <h3 id="如何修改网站css样式"><a href="#如何修改网站css样式" class="headerlink" title="如何修改网站css样式"></a>如何修改网站css样式</h3><p>主题 <code>next/source/css</code></p>
 <h3 id="next主题无法上传git"><a href="#next主题无法上传git" class="headerlink" title="next主题无法上传git"></a>next主题无法上传git</h3><p>复制一份副本，删掉 git 再 push</p>
-<h3 id="使用-hexo-delpoy-报错"><a href="#使用-hexo-delpoy-报错" class="headerlink" title="使用 hexo delpoy 报错"></a>使用 hexo delpoy 报错</h3><p>网站配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  # 注意两个空格</span><br><span class="line">  repository:  git@github.com:hellowqw/hellowqw.github.io.git</span><br><span class="line">  bracch: master</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用-hexo-delpoy-报错"><a href="#使用-hexo-delpoy-报错" class="headerlink" title="使用 hexo delpoy 报错"></a>使用 hexo delpoy 报错</h3><p>网站配置文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: git@github.com:hellowqw/hellowqw.github.io.git</span><br><span class="line">  bracch: master</span><br></pre></td></tr></table></figure></p>
+<p>如何还是不行，尝试重新安装hexo：</p>
+<ul>
+<li>保存文章及当前配置（网站配置、主题配置）</li>
+<li>清空github pages所在的库</li>
+<li>本地新建一个文件夹作为hexo init文件夹</li>
+<li>根据备份配置好网站</li>
+<li>再次deploy</li>
+<li>还是不行就单独将public文件夹push到github page<br>没必要在这上面浪费时间，可以发布文章就行。</li>
+</ul>
 
       
     </div>
