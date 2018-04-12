@@ -98,7 +98,7 @@
 <meta name="keywords" content="Sublime,Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sublime插件：Markdown语法高亮">
-<meta property="og:url" content="http://hellowqw.github.io/2017/08/23/Sublime插件：Markdown语法高亮/index.html">
+<meta property="og:url" content="http://hiblacker.github.io/2017/08/23/Sublime插件：Markdown语法高亮/index.html">
 <meta property="og:site_name" content="Blacker">
 <meta property="og:description" content="MarkDown Editing 简介 Markdown plugin for Sublime Text. Provides a decent Markdown color scheme (light and dark) with more robust syntax highlighting and useful Markdown editing features for Sublime Tex">
 <meta property="og:locale" content="zh-Hans">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://hellowqw.github.io/2017/08/23/Sublime插件：Markdown语法高亮/"/>
+  <link rel="canonical" href="http://hiblacker.github.io/2017/08/23/Sublime插件：Markdown语法高亮/"/>
 
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2017/08/23/Sublime插件：Markdown语法高亮/">
+    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/2017/08/23/Sublime插件：Markdown语法高亮/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="blacker">
@@ -443,8 +443,8 @@
 <script>
   var gitment = new Gitment({
     id: '<%= page.date %>', // 可选。默认为 location.href
-    owner: 'hellowqw', // 可以是你的GitHub用户名，也可以是github id
-    repo: 'hellowqw.github.io',
+    owner: 'hiblacker', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'hiblacker.github.io',
     oauth: {
       client_id: '50b67e2b9bb3d24c6ad1',
       client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
@@ -496,7 +496,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -732,19 +732,15 @@
    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.href, 
-                   owner: 'hiblacker',
-                   repo: 'hiblacker.github.io',
-                   oauth: {
-                       client_id: '50b67e2b9bb3d24c6ad1',
-                       client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
-                   }});
-               gitment.render('gitment-container');
-           }
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: 'hiblacker',
+               repo: 'hiblacker.github.io',
+               oauth: {
+                   client_id: '50b67e2b9bb3d24c6ad1',
+                   client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
+               }});
+           gitment.render('gitment-container');
        </script>
    
 

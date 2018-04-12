@@ -97,7 +97,7 @@
 <meta name="description" content="keep moving">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blacker">
-<meta property="og:url" content="http://hellowqw.github.io/archives/index.html">
+<meta property="og:url" content="http://hiblacker.github.io/archives/index.html">
 <meta property="og:site_name" content="Blacker">
 <meta property="og:description" content="keep moving">
 <meta property="og:locale" content="zh-Hans">
@@ -132,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://hellowqw.github.io/archives/"/>
+  <link rel="canonical" href="http://hiblacker.github.io/archives/"/>
 
 
 
@@ -270,7 +270,7 @@
         
           
         
-        嗯..! 目前共计 7 篇日志。 继续努力。
+        嗯..! 目前共计 8 篇日志。 继续努力。
       </span>
 
       
@@ -284,6 +284,43 @@
           <div class="collection-title">
             <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
           </div>
+        
+        
+
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h3 class="post-title">
+        
+            <a class="post-title-link" href="/2018/04/12/搭建基本的前端开发环境/" itemprop="url">
+              
+                <span itemprop="name">二、搭建基本的前端开发环境</span>
+              
+            </a>
+        
+      </h3>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-12T14:33:32+08:00"
+              content="2018-04-12" >
+          04-12
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+
+      
+
+        
+        
+        
+
         
         
 
@@ -555,8 +592,8 @@
 <script>
   var gitment = new Gitment({
     //id: '页面 ID', // 可选。默认为 location.href
-    owner: 'hellowqw', // 可以是你的GitHub用户名，也可以是github id
-    repo: 'hellowqw.github.io',
+    owner: 'hiblacker', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'hiblacker.github.io',
     oauth: {
       client_id: '50b67e2b9bb3d24c6ad1',
       client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
@@ -581,8 +618,8 @@
 <script>
   var gitment = new Gitment({
     id: '<%= page.date %>', // 可选。默认为 location.href
-    owner: 'hellowqw', // 可以是你的GitHub用户名，也可以是github id
-    repo: 'hellowqw.github.io',
+    owner: 'hiblacker', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'hiblacker.github.io',
     oauth: {
       client_id: '50b67e2b9bb3d24c6ad1',
       client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
@@ -625,7 +662,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -847,19 +884,15 @@
    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.href, 
-                   owner: 'hiblacker',
-                   repo: 'hiblacker.github.io',
-                   oauth: {
-                       client_id: '50b67e2b9bb3d24c6ad1',
-                       client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
-                   }});
-               gitment.render('gitment-container');
-           }
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: 'hiblacker',
+               repo: 'hiblacker.github.io',
+               oauth: {
+                   client_id: '50b67e2b9bb3d24c6ad1',
+                   client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
+               }});
+           gitment.render('gitment-container');
        </script>
    
 

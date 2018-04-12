@@ -98,7 +98,7 @@
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo 使用问题及解决方案汇总">
-<meta property="og:url" content="http://hellowqw.github.io/2017/08/27/hexo-使用问题及解决方案汇总/index.html">
+<meta property="og:url" content="http://hiblacker.github.io/2017/08/27/hexo-使用问题及解决方案汇总/index.html">
 <meta property="og:site_name" content="Blacker">
 <meta property="og:description" content="hexo版本相关hexo: 3.3.8hexo-cli: 1.0.3os: Windows_NT 10.0.15063 win32 x64node: 8.2.1next:5.1.2 hexo更改站点配置文件- title后网站标题无变化">
 <meta property="og:locale" content="zh-Hans">
@@ -134,7 +134,7 @@
 
 
 
-  <link rel="canonical" href="http://hellowqw.github.io/2017/08/27/hexo-使用问题及解决方案汇总/"/>
+  <link rel="canonical" href="http://hiblacker.github.io/2017/08/27/hexo-使用问题及解决方案汇总/"/>
 
 
 
@@ -273,7 +273,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hellowqw.github.io/2017/08/27/hexo-使用问题及解决方案汇总/">
+    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/2017/08/27/hexo-使用问题及解决方案汇总/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="blacker">
@@ -456,8 +456,8 @@
 <script>
   var gitment = new Gitment({
     id: '<%= page.date %>', // 可选。默认为 location.href
-    owner: 'hellowqw', // 可以是你的GitHub用户名，也可以是github id
-    repo: 'hellowqw.github.io',
+    owner: 'hiblacker', // 可以是你的GitHub用户名，也可以是github id
+    repo: 'hiblacker.github.io',
     oauth: {
       client_id: '50b67e2b9bb3d24c6ad1',
       client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
@@ -509,7 +509,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -745,19 +745,15 @@
    <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
    
        <script type="text/javascript">
-           function ShowGitment(){
-               document.getElementById("gitment-display-button").style.display = "none";
-               document.getElementById("gitment-container").style.display = "block";
-               var gitment = new Gitment({
-                   id: document.location.href, 
-                   owner: 'hiblacker',
-                   repo: 'hiblacker.github.io',
-                   oauth: {
-                       client_id: '50b67e2b9bb3d24c6ad1',
-                       client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
-                   }});
-               gitment.render('gitment-container');
-           }
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: 'hiblacker',
+               repo: 'hiblacker.github.io',
+               oauth: {
+                   client_id: '50b67e2b9bb3d24c6ad1',
+                   client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
+               }});
+           gitment.render('gitment-container');
        </script>
    
 
