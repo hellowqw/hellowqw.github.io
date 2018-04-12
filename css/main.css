@@ -1935,7 +1935,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9a2b0e;
+  background: #92f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3097,6 +3097,14 @@ body {
   height: 35px;
   line-height: 35px;
   font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+  .post-meta-divider {
+    display: none;
+  }
+  .post-meta-item-icon {
+    margin-left: 8px;
+  }
 }
 @media screen and (min-width: 750px) {
   #QR img {
