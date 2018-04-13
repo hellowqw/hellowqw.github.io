@@ -1935,7 +1935,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f06af4;
+  background: #ed2d67;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3114,4 +3114,7 @@ body {
   #QR #wechat {
     margin-right: 168px;
   }
+}
+.posts-expand .post-body img {
+  margin-top: 10px;
 }
