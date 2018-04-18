@@ -1936,7 +1936,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4738e3;
+  background: #dd1f26;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3159,11 +3159,8 @@ body {
 }
 @media screen and (min-width: 750px) {
   #QR img {
-    width: 228px;
-    margin: 0.8em 0 0;
-  }
-  #QR #wechat {
-    margin-right: 168px;
+    width: 36%;
+    margin: 0.8em 2em 0;
   }
 }
 .posts-expand .post-body img {
