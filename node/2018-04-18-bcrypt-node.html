@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="node," />
 
 
 
@@ -94,21 +94,18 @@
 
 
 
-<meta name="description" content="经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中。">
-<meta name="keywords" content="vue">
+<meta name="description" content="Node版加密模块，原生JS实现。">
+<meta name="keywords" content="node">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VUE打包优化">
-<meta property="og:url" content="http://hiblacker.github.io/vue/vue-build-optimize.html">
+<meta property="og:title" content="Node加密模块bcrypt-nodejs">
+<meta property="og:url" content="http://hiblacker.github.io/node/2018-04-18-bcrypt-node.html">
 <meta property="og:site_name" content="Blacker">
-<meta property="og:description" content="经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中。">
+<meta property="og:description" content="Node版加密模块，原生JS实现。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/8F4SEjb8ky.png">
-<meta property="og:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/CWhfFK2ntD.png">
-<meta property="og:updated_time" content="2018-04-17T03:57:25.108Z">
+<meta property="og:updated_time" content="2018-04-18T10:54:19.179Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VUE打包优化">
-<meta name="twitter:description" content="经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中。">
-<meta name="twitter:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/8F4SEjb8ky.png">
+<meta name="twitter:title" content="Node加密模块bcrypt-nodejs">
+<meta name="twitter:description" content="Node版加密模块，原生JS实现。">
 
 
 
@@ -137,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://hiblacker.github.io/vue/vue-build-optimize.html"/>
+  <link rel="canonical" href="http://hiblacker.github.io/node/2018-04-18-bcrypt-node.html"/>
 
 
 
 
 
-  <title>VUE打包优化 | Blacker</title>
+  <title>Node加密模块bcrypt-nodejs | Blacker</title>
   
 
 
@@ -286,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/vue/vue-build-optimize.html">
+    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/node/2018-04-18-bcrypt-node.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="blacker">
@@ -303,7 +300,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">VUE打包优化</h2>
+          <h2 class="post-title" itemprop="name headline">Node加密模块bcrypt-nodejs</h2>
         
 
         <div class="post-meta">
@@ -315,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T15:29:00+08:00">
-                2018-04-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T17:02:07+08:00">
+                2018-04-18
               </time>
             
 
@@ -331,8 +328,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-17T11:57:25+08:00">
-                2018-04-17
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-18T18:54:19+08:00">
+                2018-04-18
               </time>
             
           </span>
@@ -350,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
                   </a>
                 </span>
 
@@ -386,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  448
+                  446
                 </span>
               
 
@@ -423,17 +420,64 @@
       
 
       
-        <p>经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 <a href="http://www.bootcdn.cn/" target="_blank" rel="noopener">bootcdn</a> 直接引入到根目录的 <code>index.html</code> 中。<br><a id="more"></a></p>
-<h1 id="首先在根目录引入CDN"><a href="#首先在根目录引入CDN" class="headerlink" title="首先在根目录引入CDN"></a>首先在根目录引入CDN</h1><p>注意要在 <code>&lt;/body&gt;</code> 前引入，否则会报错。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* ./index.html */</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- built files will be auto injected --&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/vue/2.5.16/vue.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/element-ui/2.3.3/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="接着配置-webpack"><a href="#接着配置-webpack" class="headerlink" title="接着配置 webpack"></a>接着配置 webpack</h1><p>在 webpack 里有个 externals，可以忽略不需要打包的库。<code>key</code> 参考 <code>package.json</code> , <code>value</code> 是你引入的别名。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ./build/webpack.base.conf.js */</span></span><br><span class="line"></span><br><span class="line">externals: &#123;</span><br><span class="line">    <span class="string">'vue'</span>: <span class="string">'Vue'</span>,</span><br><span class="line">    <span class="string">'vue-router'</span>: <span class="string">'VueRouter'</span>,</span><br><span class="line">    <span class="string">'element-ui'</span>: <span class="string">'ElementUI'</span>,</span><br><span class="line">    <span class="string">'echarts'</span>: <span class="string">'Echarts'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>到这里应该就 OK 了<br>但是我遇到了报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element is not defined</span><br></pre></td></tr></table></figure></p>
-<p><code>main.js</code> 中注释掉就好了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import ElementUI from 'element-ui'</span></span><br></pre></td></tr></table></figure></p>
-<p>对比图片，优化前：<br><img src="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/8F4SEjb8ky.png" alt="优化前"><br>优化后：<br><img src="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/CWhfFK2ntD.png" alt="优化后"></p>
-<h1 id="2018-4-17-补充"><a href="#2018-4-17-补充" class="headerlink" title="2018-4-17 补充"></a>2018-4-17 补充</h1><p>今天想 <code>vue</code> 和 <code>vue-router</code> 文件不是很大，还是一起打包的好，能少两次请求，于是：<br><code>index.html</code> :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/element-ui/2.3.3/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><code>webpack.base.conf.js</code> :<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">externals: &#123;</span><br><span class="line">    <span class="comment">// 'vue': 'Vue',</span></span><br><span class="line">    <span class="comment">// 'vue-router': 'VueRouter',</span></span><br><span class="line">    <span class="string">'element-ui'</span>: <span class="string">'ElementUI'</span>,</span><br><span class="line">    <span class="string">'echarts'</span>: <span class="string">'Echarts'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element is not defined</span><br></pre></td></tr></table></figure></p>
-<p>原因是 <code>element</code> 依赖 <code>vue</code> ，需要在 <code>vue</code> 之后引入，而如果在其之后引入，又会报组件未注册的错误，因此 <code>vue</code> 和 <code>element</code> 必须同时使用CDN，而且 <code>element</code> 需在 <code>vue</code> 之后引入。</p>
-<p>参考<a href="https://orangexc.xyz/2017/05/15/Vue-project-optimization/" target="_blank" rel="noopener">地址</a></p>
+        <p>Node版加密模块，原生JS实现。<br><a id="more"></a></p>
+<h1 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用 :"></a>基本使用 :</h1><p>同步：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hash = bcrypt.hashSync(<span class="string">"bacon"</span>);</span><br><span class="line"> </span><br><span class="line">bcrypt.compareSync(<span class="string">"bacon"</span>, hash); <span class="comment">// true</span></span><br><span class="line">bcrypt.compareSync(<span class="string">"veggies"</span>, hash); <span class="comment">// false</span></span><br></pre></td></tr></table></figure></p>
+<p>异步：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">bcrypt.hash(<span class="string">"bacon"</span>, <span class="literal">null</span>, <span class="literal">null</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, hash</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// Store hash in your password DB.</span></span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line"><span class="comment">// Load hash from your password DB.</span></span><br><span class="line">bcrypt.compare(<span class="string">"bacon"</span>, hash, <span class="function"><span class="keyword">function</span>(<span class="params">err, res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// res == true</span></span><br><span class="line">&#125;);</span><br><span class="line">bcrypt.compare(<span class="string">"veggies"</span>, hash, <span class="function"><span class="keyword">function</span>(<span class="params">err, res</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// res = false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在上面的例子中，加密盐自动生成并添加到散列中。虽然你可以使用自定义salt，但没必要，因为它总是会被加入到最终的散列中并可以重新取回。</p>
+<h1 id="API"><a href="#API" class="headerlink" title="API"></a>API</h1><p>找了半天没有找到中文版，为了加深记忆，方便以后翻阅，自己翻译过来吧~英语很渣，如有错误，请指出~，<a href="https://www.npmjs.com/package/bcrypt-nodejs" target="_blank" rel="noopener">原文地址</a></p>
+<hr>
+<p><code>genSaltSync ( rounds )</code></p>
+<ul>
+<li><code>rounds</code>： 可选，哈希次数，默认为10。</li>
+</ul>
+<hr>
+<p><code>genSalt ( rounds, callback ( error, result ))</code></p>
+<ul>
+<li><code>rounds</code>： 可选，哈希次数，默认为10。</li>
+<li><code>callback</code>： <strong>必需</strong>，salt 生成时执行的回调函数。<ul>
+<li><code>error</code>： 返回各种错误。</li>
+<li><code>result</code>： 返回生成的salt。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><code>hashSync ( data, salt )</code></p>
+<ul>
+<li><code>data</code>： <strong>必需</strong>，要加密的数据。</li>
+<li><code>salt</code>： <strong>必需</strong>，加密时使用的salt。</li>
+</ul>
+<hr>
+<p><code>hash ( data, salt, progress, callback ( error, result ))</code></p>
+<ul>
+<li><code>data</code>： <strong>必需</strong>，要加密的数据。</li>
+<li><code>salt</code>： <strong>必需</strong>，哈希密码的 <code>salt</code>。</li>
+<li><code>progress</code>：  进行哈希计算时执行的。。</li>
+<li><code>callback</code>：<strong>必需</strong>，<code>data</code> 加密完成后执行的。。<ul>
+<li><code>error</code>：返回各种错误。</li>
+<li><code>result</code>： 返回加密形式。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><code>compareSync ( data, encrypted )</code></p>
+<ul>
+<li><code>data</code>： <strong>必需</strong>，用来比较的数据。</li>
+<li><code>encrypted</code>： <strong>必需</strong>，用来被比较的数据。</li>
+</ul>
+<hr>
+<p><code>compare ( data, encrypted, cb )</code></p>
+<ul>
+<li><code>data</code>： <strong>必需</strong>，用来比较的数据。</li>
+<li><code>encrypted</code>： <strong>必需</strong>，用来被比较的数据。</li>
+<li><code>callback</code>：<strong>必需</strong>，<code>data</code> 比较完成后执行的回调函数。<ul>
+<li><code>error</code>：返回各种错误。</li>
+<li><code>result</code>： 返回加密形式是否匹配[ true | false ]。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><code>getRounds ( encrypted )</code><br>返回加密散列的哈希次数。<br><code>encrypted</code>：<strong>必需</strong>， 要提取哈希次数的加密散列。</p>
+<hr>
 
       
     </div>
@@ -478,7 +522,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/node/" rel="tag"># node</a>
           
         </div>
       
@@ -491,8 +535,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/webpack/1-basea.html" rel="next" title="二、搭建基本的前端开发环境">
-                <i class="fa fa-chevron-left"></i> 二、搭建基本的前端开发环境
+              <a href="/skill/how-to-read-github-efficiently.html" rel="next" title="如何高效阅读Github源代码">
+                <i class="fa fa-chevron-left"></i> 如何高效阅读Github源代码
               </a>
             
           </div>
@@ -500,10 +544,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/skill/how-to-read-github-efficiently.html" rel="prev" title="如何高效阅读Github源代码">
-                如何高效阅读Github源代码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,7 +681,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先在根目录引入CDN"><span class="nav-number">1.</span> <span class="nav-text">首先在根目录引入CDN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接着配置-webpack"><span class="nav-number">2.</span> <span class="nav-text">接着配置 webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2018-4-17-补充"><span class="nav-number">3.</span> <span class="nav-text">2018-4-17 补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本使用"><span class="nav-number">1.</span> <span class="nav-text">基本使用 :</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#API"><span class="nav-number">2.</span> <span class="nav-text">API</span></a></li></ol></div>
             
 
           </div>
