@@ -1936,7 +1936,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #fffb3c;
+  background: #1fcdff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3250,4 +3250,14 @@ body {
 b,
 strong {
   color: #111;
+}
+@media screen and (min-width: 1111px) {
+  .content-wrap {
+    padding: 40px 20px;
+    width: 828px;
+  }
+  .header,
+  .container .main-inner {
+    width: 1088px;
+  }
 }
