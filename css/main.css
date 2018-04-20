@@ -1936,7 +1936,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1fcdff;
+  background: #083c69;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3111,6 +3111,11 @@ pre .javascript .function {
 }
 body {
   line-height: 1.75;
+  font-size: 16px;
+}
+.post-body {
+  color: #24292e;
+  font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .post-body a {
   position: relative;
@@ -3247,10 +3252,6 @@ body {
   -o-transform: scale(0);
   transform: scale(0);
 }
-b,
-strong {
-  color: #111;
-}
 @media screen and (min-width: 1111px) {
   .content-wrap {
     padding: 40px 20px;
@@ -3260,4 +3261,16 @@ strong {
   .container .main-inner {
     width: 1088px;
   }
+}
+blockquote {
+  margin-bottom: 10px;
+}
+.posts-expand .post-body ul li {
+  list-style: disc;
+}
+.posts-expand .post-body ul li li {
+  list-style: circle;
+}
+.posts-expand .post-body ul li ul {
+  padding-left: 28px;
 }

@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo," />
+  <meta name="keywords" content="middleware," />
 
 
 
@@ -94,18 +94,21 @@
 
 
 
-<meta name="description" content="hexo一些常用命令，简写等。">
-<meta name="keywords" content="hexo">
+<meta name="description" content="本文是我对中间件的收集整理及个人理解的记录。仅代表个人水平、个人理解。如有问题，师请雅正。">
+<meta name="keywords" content="middleware">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo常用命令">
-<meta property="og:url" content="http://hiblacker.github.io/hexo/180412hexo-note.html">
+<meta property="og:title" content="什么是中间件？">
+<meta property="og:url" content="http://hiblacker.github.io/study/what-is-middleware.html">
 <meta property="og:site_name" content="Blacker">
-<meta property="og:description" content="hexo一些常用命令，简写等。">
+<meta property="og:description" content="本文是我对中间件的收集整理及个人理解的记录。仅代表个人水平、个人理解。如有问题，师请雅正。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T10:46:50.485Z">
+<meta property="og:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/CnmReAQzNC.jpg">
+<meta property="og:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/pNnANTSfdB.jpg">
+<meta property="og:updated_time" content="2018-04-20T09:56:27.030Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo常用命令">
-<meta name="twitter:description" content="hexo一些常用命令，简写等。">
+<meta name="twitter:title" content="什么是中间件？">
+<meta name="twitter:description" content="本文是我对中间件的收集整理及个人理解的记录。仅代表个人水平、个人理解。如有问题，师请雅正。">
+<meta name="twitter:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/CnmReAQzNC.jpg">
 
 
 
@@ -134,13 +137,13 @@
 
 
 
-  <link rel="canonical" href="http://hiblacker.github.io/hexo/180412hexo-note.html"/>
+  <link rel="canonical" href="http://hiblacker.github.io/study/what-is-middleware.html"/>
 
 
 
 
 
-  <title>hexo常用命令 | Blacker</title>
+  <title>什么是中间件？ | Blacker</title>
   
 
 
@@ -283,7 +286,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/hexo/180412hexo-note.html">
+    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/study/what-is-middleware.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="blacker">
@@ -300,7 +303,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">hexo常用命令</h2>
+          <h2 class="post-title" itemprop="name headline">什么是中间件？</h2>
         
 
         <div class="post-meta">
@@ -312,8 +315,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-30T20:49:52+08:00">
-                2017-10-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-20T11:30:43+08:00">
+                2018-04-20
               </time>
             
 
@@ -328,8 +331,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-12T18:46:50+08:00">
-                2018-04-12
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-20T17:56:27+08:00">
+                2018-04-20
               </time>
             
           </span>
@@ -347,8 +350,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/study/" itemprop="url" rel="index">
+                    <span itemprop="name">study</span>
                   </a>
                 </span>
 
@@ -383,7 +386,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  535
+                  1,810
                 </span>
               
 
@@ -399,7 +402,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  6
                 </span>
               
             </div>
@@ -420,79 +423,59 @@
       
 
       
-        <p>hexo一些常用命令，简写等。<br><a id="more"></a></p>
-<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g #安装  </span><br><span class="line">npm update hexo -g #升级  </span><br><span class="line">hexo init #初始化</span><br></pre></td></tr></table></figure>
-<h1 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h1><p><code>hexo n &quot;我的博客&quot;</code>  == <code>hexo new &quot;我的博客&quot;</code>   #新建文章<br><code>hexo p</code> == <code>hexo publish</code>   #发布草稿<br><code>hexo g</code> == <code>hexo generate</code>   #生成<br><code>hexo s</code> == <code>hexo server</code>   #启动服务预览<br><code>hexo d</code> == <code>hexo deploy</code>   #部署</p>
-<h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><p><code>hexo server</code> #Hexo 会监视文件变动并自动更新，您无须重启服务器。<br><code>hexo server -s</code> #静态模式<br><code>hexo server -p 5000</code> #更改端口<br><code>hexo server -i 192.168.1.1</code> #自定义 IP</p>
-<p><code>hexo clean</code> #清除缓存 网页正常情况下可以忽略此条命令<br><code>hexo g</code> #生成静态网页<br><code>hexo d</code> #开始部署</p>
-<h3 id="监视文件变动"><a href="#监视文件变动" class="headerlink" title="监视文件变动"></a>监视文件变动</h3><p><code>hexo generate</code> #使用 Hexo 生成静态文件快速而且简单<br><code>hexo generate --watch</code> #监视文件变动</p>
-<h3 id="完成后部署"><a href="#完成后部署" class="headerlink" title="完成后部署"></a>完成后部署</h3><blockquote>
-<p>两个命令的作用是相同的<br>hexo generate –deploy<br>hexo deploy –generate</p>
+        <p>本文是我对中间件的收集整理及个人理解的记录。仅代表个人水平、个人理解。如有问题，师请雅正。<br><a id="more"></a></p>
+<h1 id="什么是中间件？"><a href="#什么是中间件？" class="headerlink" title="什么是中间件？"></a>什么是中间件？</h1><p>维基百科：</p>
+<blockquote>
+<p>中间件（英语：Middleware），是提供系统软件和应用软件之间连接的软件，以便于软件各部件之间的沟通，特别是应用软件对于系统软件的集中的逻辑，在现代信息技术应用框架如Web服务、面向服务的体系结构等中应用比较广泛。如数据库、Apache的Tomcat，IBM公司的WebSphere,BEA公司的WebLogic应用服务器，东方通公司的Tong系列中间件，以及Kingdee公司的等都属于中间件。<br>严格来讲，中间件技术已经不局限于应用服务器、数据库服务器。围绕中间件，Apache组织、IBM、Oracle（BEA）、微软各自发展出了较为完整的软件产品体系。（Microsoft Servers微软公司的服务器产品）。中间件技术创建在对应用软件部分常用功能的抽象上，将常用且重要的过程调用、分布式组件、消息队列、事务、安全、连结器、商业流程、网络并发、HTTP服务器、Web Service等功能集于一身或者分别在不同品牌的不同产品中分别完成。一般认为在商业中间件及信息化市场主要存在微软阵营、Java阵营、开源阵营。阵营的区分主要体现在对下层操作系统的选择以及对上层组件标准的制订。目前主流商业操作系统主要来自Unix、苹果公司和Linux的系统以及微软视窗系列。微软阵营的主要技术提供商来自微软及其商业伙伴，Java阵营则来自IBM、Sun（已被Oracle收购）、Oracle、BEA（已被Oracle收购）、金蝶（Kingdee Apusic）及其合作伙伴，开源阵营则主要来自诸如Apache，SourceForge等组织的共享代码。</p>
 </blockquote>
-<p>简写：<br><code>hexo deploy -g</code> #完成后部署<br><code>hexo server -g</code> #完成后启动本地服务，可通过默认端口预览访问</p>
-<h1 id="模版"><a href="#模版" class="headerlink" title="模版"></a>模版</h1><p><code>hexo new &quot;postName&quot;</code> #新建文章<br><code>hexo new page &quot;pageName&quot;</code> #新建页面<br><code>hexo generate</code> #生成静态页面至public目录<br><code>hexo server</code> #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）<br><code>hexo deploy</code> #将.deploy目录部署到GitHub</p>
-<p><code>hexo new [layout] &lt;title&gt;</code><br><code>hexo new photo &quot;My Gallery&quot;</code><br><code>hexo new &quot;Hello World&quot; --lang tw</code></p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>layout</td>
-<td style="text-align:left">布局</td>
-</tr>
-<tr>
-<td>title</td>
-<td style="text-align:left">标题</td>
-</tr>
-<tr>
-<td>date</td>
-<td style="text-align:left">文件建立日期</td>
-</tr>
-</tbody>
-</table>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">title: 使用Hexo搭建个人博客</span><br><span class="line">layout: post</span><br><span class="line">date: 2014-03-03 19:07:43</span><br><span class="line">comments: true  #是否允许评论</span><br><span class="line">categories: Blog  #所在目录</span><br><span class="line">tags: [Hexo]  #标签</span><br><span class="line">keywords: Hexo, Blog</span><br><span class="line">description: 生命在于折腾，又把博客折腾到Hexo了。给Hexo点赞。</span><br></pre></td></tr></table></figure>
-<h1 id="模版（Scaffold）"><a href="#模版（Scaffold）" class="headerlink" title="模版（Scaffold）"></a>模版（Scaffold）</h1><p><code>hexo new photo &quot;My Gallery&quot;</code></p>
-<h1 id="设置文章摘要"><a href="#设置文章摘要" class="headerlink" title="设置文章摘要"></a>设置文章摘要</h1><p>以上是文章摘要 <code>&lt;!--more--&gt;</code> 以下是余下全文 </p>
-<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><p><code>hexo new page &lt;title&gt;</code><br><code>hexo new post &lt;title&gt;</code></p>
-<table>
-<thead>
-<tr>
-<th>变量</th>
-<th style="text-align:left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>:title</td>
-<td style="text-align:left">标题</td>
-</tr>
-<tr>
-<td>:year</td>
-<td style="text-align:left">建立的年份（4 位数）</td>
-</tr>
-<tr>
-<td>:month</td>
-<td style="text-align:left">建立的月份（2 位数）</td>
-</tr>
-<tr>
-<td>:i_month</td>
-<td style="text-align:left">建立的月份（去掉开头的零）</td>
-</tr>
-<tr>
-<td>:day</td>
-<td style="text-align:left">建立的日期（2 位数）</td>
-</tr>
-<tr>
-<td>:i_day</td>
-<td style="text-align:left">建立的日期（去掉开头的零）</td>
-</tr>
-</tbody>
-</table>
-<p>推送到服务器上<br><code>hexo n</code> #写文章<br><code>hexo g</code> #生成<br><code>hexo d</code> #部署 #可与hexo g合并为 hexo d -g</p>
+<p>好吧，作为一个前端渣渣，看不懂。再看看<a href="https://baike.baidu.com/item/%E4%B8%AD%E9%97%B4%E4%BB%B6/452240?fr=aladdin" target="_blank" rel="noopener">百度百科</a>吧，下面是一些相关中间件：</p>
+<ul>
+<li>企业服务总线（ESB ： Enterprise Service Bus）：ESB 是一种开放的、基于标准的分布式同步或异步信息传递中间件。通过 XML、Web Service接口以及标准化基于规则的路由选择文档等支持，ESB 为企业应用程序提供安全互用性。</li>
+<li>事务处理（TP：Transaction Processing）监控器：为发生在对象间的事务处理提供监控功能，以确保操作成功实现。</li>
+<li>分布式计算环境（DCE：Distributed Computing Environment）：指创建运行在不同平台上的分布式应用程序所需的一组技术服务。</li>
+<li>远程过程调用（RPC：Remote Procedure Call）：指客户机向服务器发送关于运行某程序的请求时所需的标准。</li>
+<li>对象请求代理（ORB：Object Request Broker）：为用户提供与其他分布式网络环境中对象通信的接口。</li>
+<li>数据库访问中间件（Database Access Middleware）：支持用户访问各种操作系统或应用程序中的数据库。SQL 是该类中间件的其中一种。</li>
+<li>信息传递（Message Passing）：电子邮件系统是该类中间件的其中一种。</li>
+<li>基于XML的中间件（XML-Based Middleware）：XML 允许开发人员为实现在Internet中交换结构化信息而创建文档。</li>
+</ul>
+<p>OK，到这里，还是一脸懵逼。。。别灰心，因为术业有专攻，中间件是一个比较宽泛的概念，我们缩小一下范围，了解一下web相关的中间件，简单点：</p>
+<ul>
+<li>将具体业务和底层逻辑解耦的组件。</li>
+<li>数据从底层到应用端的中转站。</li>
+</ul>
+<h1 id="Node中间件"><a href="#Node中间件" class="headerlink" title="Node中间件"></a>Node中间件</h1><p>说了这么多，好像并没有什么实质性的内容，都是一些抽象的概念，来点实际的，了解一下Node中间件。<br>近几年来，在企业开发中越来越推崇微服务架构，而它在不经意间却导致前端同学和后端同学之间关于 API 接口颗粒度的争吵，越来越多见：</p>
+<ul>
+<li>「你自己请求 2 个接口再组装不就行了？」 - 后端同学追求服务下沉和解耦。</li>
+<li>「少一次 HTTP 啊，加一个接口有那么难么？」 - 前端同学离用户最近，需要考虑用户体验灵活性。</li>
+</ul>
+<p>归结为一个问题：<strong>『服务端设计的接口究竟是面向 UI 还是只是通用服务？』</strong></p>
+<p><img src="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/CnmReAQzNC.jpg" alt=""></p>
+<h2 id="BFF-的提出"><a href="#BFF-的提出" class="headerlink" title="BFF 的提出"></a>BFF 的提出</h2><p>2015 年，Sam Newman 对此提出了 <a href="https://samnewman.io/patterns/architectural/bff/" target="_blank" rel="noopener">Pattern: Backends For Frontends</a>，简称 BFF，国内也俗称为粘合层。</p>
+<p><img src="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/pNnANTSfdB.jpg" alt=""></p>
+<p>可以看出，这一层一直都存在，只不过是由后端同学维护而已。<br>但我们知道，前端贴近用户侧，需求的变化太快了，后端同学来维护会很累。<br><strong>在 BFF 理念中，最重要的一点是：服务自治，谁使用谁开发，即它应该由前端同学去维护。</strong></p>
+<ul>
+<li>服务自治减少了沟通成本，带来了灵活和高效。</li>
+<li>自己吃自己的狗粮。</li>
+<li><strong>BFF 并不限制具体技术，团队根据自己的技术栈来选型： Java/Node/PHP/Python/Ruby…</strong></li>
+<li>基于 GraphQL 技术的通用中间层网关，也是刚刚出现一种很不错的方案。</li>
+<li><strong>在大部分前端团队中，都会倾向于选择生态更优，语法更熟悉的 Node.js 。</strong></li>
+</ul>
+<h2 id="为什么是Node？"><a href="#为什么是Node？" class="headerlink" title="为什么是Node？"></a>为什么是Node？</h2><p>无它，就是需要这样的一个中间层，但后端同学不太想管了（也管不过来），所以大部分前端同学选择了一个更顺手的 Node.js ，仅此而已。</p>
+<h2 id="那么，上Node？"><a href="#那么，上Node？" class="headerlink" title="那么，上Node？"></a>那么，上Node？</h2><p>不，你需要根据你的业务场景，还有团队的技术架构，来具体情况具体分析。切记， BFF 不限制具体技术选型。<br>BFF 不可避免的会带来：<strong>研发成本一定程度上的增加，对开发者的能力要求增加</strong>。</p>
+<h1 id="Express中间件"><a href="#Express中间件" class="headerlink" title="Express中间件"></a>Express中间件</h1><p>Express和Koa是目前最主流的基于node的web开发框架，他们的开发者是同一班人马。貌似现在Koa更加流行，但是仍然有大量的项目在使用Express，所以这里我们说说Express中间件的原理。以下所说中间件皆为Express中间件。</p>
+<h2 id="中间件的功能和分类"><a href="#中间件的功能和分类" class="headerlink" title="中间件的功能和分类"></a>中间件的功能和分类</h2><p>中间件的本质就是一个函数，在收到请求和返回相应的过程中做一些我们想做的事情。Express文档中对它的作用是这么描述的：</p>
+<blockquote>
+<p>执行任何代码。<br>修改请求和响应对象。<br>终结请求-响应循环。<br>调用堆栈中的下一个中间件。</p>
+</blockquote>
+<p>Express文档中把他们分为了五类，但是他们的原理相同，只是用法不同：</p>
+<blockquote>
+<p>应用级中间件<br>路由级中间件<br>错误处理中间件<br>内置中间件<br>第三方中间件</p>
+</blockquote>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><p>非常简单。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line">app.use(<span class="string">'/user'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//TODO</span></span><br><span class="line">  next();</span><br><span class="line">&#125;);</span><br><span class="line">app.listen(<span class="number">8080</span>)</span><br></pre></td></tr></table></figure>
+<p>总结：</p>
+<p>参考：<br><a href="https://juejin.im/post/5aa345116fb9a028e52d7217" target="_blank" rel="noopener">Express中间件原理详解</a><br><a href="https://www.zhihu.com/question/264563447/answer/282547461" target="_blank" rel="noopener">为什么互联网公司开始用node.js做web服务的中间件？有什么好处吗？</a></p>
 
       
     </div>
@@ -537,7 +520,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/middleware/" rel="tag"># middleware</a>
           
         </div>
       
@@ -550,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/hexo/hexo-next-theme-change.html" rel="next" title="将hexo主题next改成自己喜欢的样子">
-                <i class="fa fa-chevron-left"></i> 将hexo主题next改成自己喜欢的样子
+              <a href="/study/MongoDB-study-shell.html" rel="next" title="MongoDB基础命令">
+                <i class="fa fa-chevron-left"></i> MongoDB基础命令
               </a>
             
           </div>
@@ -559,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/work/180412ald_ad_api.html" rel="prev" title="广告大后台接口">
-                广告大后台接口 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -700,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo"><span class="nav-number">1.</span> <span class="nav-text">hexo</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简写"><span class="nav-number">2.</span> <span class="nav-text">简写</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务器"><span class="nav-number">3.</span> <span class="nav-text">服务器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#监视文件变动"><span class="nav-number">3.0.1.</span> <span class="nav-text">监视文件变动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成后部署"><span class="nav-number">3.0.2.</span> <span class="nav-text">完成后部署</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模版"><span class="nav-number">4.</span> <span class="nav-text">模版</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模版（Scaffold）"><span class="nav-number">5.</span> <span class="nav-text">模版（Scaffold）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置文章摘要"><span class="nav-number">6.</span> <span class="nav-text">设置文章摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写作"><span class="nav-number">7.</span> <span class="nav-text">写作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是中间件？"><span class="nav-number">1.</span> <span class="nav-text">什么是中间件？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node中间件"><span class="nav-number">2.</span> <span class="nav-text">Node中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BFF-的提出"><span class="nav-number">2.1.</span> <span class="nav-text">BFF 的提出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么是Node？"><span class="nav-number">2.2.</span> <span class="nav-text">为什么是Node？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么，上Node？"><span class="nav-number">2.3.</span> <span class="nav-text">那么，上Node？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Express中间件"><span class="nav-number">3.</span> <span class="nav-text">Express中间件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#中间件的功能和分类"><span class="nav-number">3.1.</span> <span class="nav-text">中间件的功能和分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用法"><span class="nav-number">3.2.</span> <span class="nav-text">用法</span></a></li></ol></li></ol></div>
             
 
           </div>
