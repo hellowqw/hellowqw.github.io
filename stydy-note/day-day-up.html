@@ -103,7 +103,7 @@
 <meta property="og:description" content="起手诗从今天起，做一个牛X的人，早起，健身，修炼算法从今天起，关心代码质量，我有一个梦想，朝九晚五，年薪百万从今天起，和每一个亲人通信，告诉他们我的决心那成功的天使告诉我的我想告诉每一个人给每一个文件、每一个变量取一个温暖的名字陌生人，我也为你祝福愿你有一个灿烂的前程愿你的头发不再减少愿你明天仍是公司栋梁而我，只愿朝九晚五，年薪百万">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/TKTEJ2aBmR.jpg">
-<meta property="og:updated_time" content="2018-04-19T04:00:31.931Z">
+<meta property="og:updated_time" content="2018-04-21T03:25:01.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="每天一道算法题">
 <meta name="twitter:description" content="起手诗从今天起，做一个牛X的人，早起，健身，修炼算法从今天起，关心代码质量，我有一个梦想，朝九晚五，年薪百万从今天起，和每一个亲人通信，告诉他们我的决心那成功的天使告诉我的我想告诉每一个人给每一个文件、每一个变量取一个温暖的名字陌生人，我也为你祝福愿你有一个灿烂的前程愿你的头发不再减少愿你明天仍是公司栋梁而我，只愿朝九晚五，年薪百万">
@@ -330,8 +330,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-19T12:00:31+08:00">
-                2018-04-19
+              <time title="更新于" itemprop="dateModified" datetime="2018-04-21T11:25:01+08:00">
+                2018-04-21
               </time>
             
           </span>
@@ -385,7 +385,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  1,140
+                  1,353
                 </span>
               
 
@@ -401,7 +401,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  5
+                  6
                 </span>
               
             </div>
@@ -444,6 +444,8 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cartesion</span>(<span class="params">...arys</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (arys.length == <span class="number">0</span>) <span class="keyword">return</span> []</span><br><span class="line">    <span class="keyword">if</span> (arys.length == <span class="number">1</span>) <span class="keyword">return</span> arys</span><br><span class="line">    <span class="keyword">return</span> arys.reduce(<span class="function">(<span class="params">prev, item</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> t = []</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> prev) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> j <span class="keyword">of</span> item) &#123;</span><br><span class="line">                t.push(<span class="built_in">Array</span>.isArray(i) ? [...i, j] : [i, j])</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> t</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(cartesion([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="string">'a'</span>, <span class="string">'b'</span>], [<span class="string">'x'</span>, <span class="string">'y'</span>]))</span><br><span class="line"><span class="comment">// [[1, 'a', 'x'],[1, 'a', 'y'],[1, 'b', 'x'],[1, 'b', 'y'],[2, 'a', 'x'],[2, 'a', 'y'],</span></span><br><span class="line"><span class="comment">// [2, 'b', 'x'],[2, 'b', 'y'],[3, 'a', 'x'],[3, 'a', 'y'],[3, 'b', 'x'],[3, 'b', 'y']]</span></span><br></pre></td></tr></table></figure>
 <p>思路：<br>这道题主要是训练 <code>reduce</code> 的用法，我们依次组合两个数组中的每一项，然后把结果作为一个整体继续和接下来的数组进行组合。<br>这里还需要注意es6扩展符 <code>...</code> 的用法，大家可以把这个符号去掉再执行一遍程序，看看有什么不同。</p>
 <p>飞机票：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce" target="_blank" rel="noopener"><code>Array.prototype.reduce</code></a></p>
+<h1 id="第四天-【2018-04-21】"><a href="#第四天-【2018-04-21】" class="headerlink" title="第四天 【2018-04-21】"></a>第四天 【2018-04-21】</h1><p>假设有一个数组，它的第 <code>i</code> 个元素是一个给定的股票在第 <code>i</code> 天的价格。设计一个算法来找到最大的利润。你可以完成尽可能多的交易（多次买卖股票）。然而，你不能同时参与多个交易（你必须在再次购买前出售股票）。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> maxProfit = <span class="function"><span class="keyword">function</span> (<span class="params">prices</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!prices.length) <span class="keyword">return</span> <span class="number">0</span> <span class="comment">//越界判断</span></span><br><span class="line">    <span class="keyword">var</span> max = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> diff = prices[i] - prices[i - <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">if</span> (diff &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            max += diff</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>思路是：<br>1、声明一个 <code>max</code> 记录利润<br>2、从第二项开始循环数组，判断明天的价格是否高于今天<br>3、如果高于前一天，为了利润最大，今天应该买入，所以最大利润 <code>max</code> 增加相应的差价</p>
 <p><br><br><a href="https://juejin.im/post/5ab71940f265da237410efc4" target="_blank" rel="noopener">原文地址，侵删哈</a></p>
 
       
@@ -652,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起手诗"><span class="nav-number">1.</span> <span class="nav-text">起手诗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一天-【2018-04-12】"><span class="nav-number">2.</span> <span class="nav-text">第一天 【2018-04-12】</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二天-【2018-04-16】"><span class="nav-number">3.</span> <span class="nav-text">第二天 【2018-04-16】</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三天-【2018-04-19】"><span class="nav-number">4.</span> <span class="nav-text">第三天 【2018-04-19】</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#起手诗"><span class="nav-number">1.</span> <span class="nav-text">起手诗</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一天-【2018-04-12】"><span class="nav-number">2.</span> <span class="nav-text">第一天 【2018-04-12】</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二天-【2018-04-16】"><span class="nav-number">3.</span> <span class="nav-text">第二天 【2018-04-16】</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三天-【2018-04-19】"><span class="nav-number">4.</span> <span class="nav-text">第三天 【2018-04-19】</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四天-【2018-04-21】"><span class="nav-number">5.</span> <span class="nav-text">第四天 【2018-04-21】</span></a></li></ol></div>
             
 
           </div>
