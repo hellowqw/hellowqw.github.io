@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="vue," />
+  <meta name="keywords" content="work api," />
 
 
 
@@ -94,21 +94,18 @@
 
 
 
-<meta name="description" content="经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中。">
-<meta name="keywords" content="vue">
+<meta name="description" content="192.168.1.37/ad_project/index.php/Main/action/">
+<meta name="keywords" content="work api">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VUE打包优化">
-<meta property="og:url" content="http://hiblacker.github.io/vue/vue-build-optimize.html">
+<meta property="og:title" content="大后台接口wzp">
+<meta property="og:url" content="http://hiblacker.github.io/work/2018-04-28apiwzp.html">
 <meta property="og:site_name" content="Blacker">
-<meta property="og:description" content="经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中。">
+<meta property="og:description" content="192.168.1.37/ad_project/index.php/Main/action/">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/8F4SEjb8ky.png">
-<meta property="og:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/CWhfFK2ntD.png">
-<meta property="og:updated_time" content="2018-04-17T03:57:25.108Z">
+<meta property="og:updated_time" content="2018-05-02T10:35:23.020Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VUE打包优化">
-<meta name="twitter:description" content="经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 bootcdn 直接引入到根目录的 index.html 中。">
-<meta name="twitter:image" content="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/8F4SEjb8ky.png">
+<meta name="twitter:title" content="大后台接口wzp">
+<meta name="twitter:description" content="192.168.1.37/ad_project/index.php/Main/action/">
 
 
 
@@ -137,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://hiblacker.github.io/vue/vue-build-optimize.html"/>
+  <link rel="canonical" href="http://hiblacker.github.io/work/2018-04-28apiwzp.html"/>
 
 
 
 
 
-  <title>VUE打包优化 | Blacker</title>
+  <title>大后台接口wzp | Blacker</title>
   
 
 
@@ -286,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/vue/vue-build-optimize.html">
+    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/work/2018-04-28apiwzp.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="blacker">
@@ -303,7 +300,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">VUE打包优化</h2>
+          <h2 class="post-title" itemprop="name headline">大后台接口wzp</h2>
         
 
         <div class="post-meta">
@@ -315,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-13T15:29:00+08:00">
-                2018-04-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T16:12:31+08:00">
+                2018-04-28
               </time>
             
 
@@ -331,8 +328,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-17T11:57:25+08:00">
-                2018-04-17
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-02T18:35:23+08:00">
+                2018-05-02
               </time>
             
           </span>
@@ -350,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/vue/" itemprop="url" rel="index">
-                    <span itemprop="name">vue</span>
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">work</span>
                   </a>
                 </span>
 
@@ -386,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  448
+                  144
                 </span>
               
 
@@ -402,7 +399,7 @@
                   <span class="post-meta-item-text">阅读时长</span>
                 
                 <span title="阅读时长">
-                  2
+                  1
                 </span>
               
             </div>
@@ -423,17 +420,149 @@
       
 
       
-        <p>经过2小时努力，将打包后的vendor由1.44M优化至50k。方法是打包 vender 时不打包 vue、element-ui、echarts 等，换用国内的 <a href="http://www.bootcdn.cn/" target="_blank" rel="noopener">bootcdn</a> 直接引入到根目录的 <code>index.html</code> 中。<br><a id="more"></a></p>
-<h1 id="首先在根目录引入CDN"><a href="#首先在根目录引入CDN" class="headerlink" title="首先在根目录引入CDN"></a>首先在根目录引入CDN</h1><p>注意要在 <code>&lt;/body&gt;</code> 前引入，否则会报错。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/* ./index.html */</span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- built files will be auto injected --&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/vue/2.5.16/vue.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/element-ui/2.3.3/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h1 id="接着配置-webpack"><a href="#接着配置-webpack" class="headerlink" title="接着配置 webpack"></a>接着配置 webpack</h1><p>在 webpack 里有个 externals，可以忽略不需要打包的库。<code>key</code> 参考 <code>package.json</code> , <code>value</code> 是你引入的别名。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* ./build/webpack.base.conf.js */</span></span><br><span class="line"></span><br><span class="line">externals: &#123;</span><br><span class="line">    <span class="string">'vue'</span>: <span class="string">'Vue'</span>,</span><br><span class="line">    <span class="string">'vue-router'</span>: <span class="string">'VueRouter'</span>,</span><br><span class="line">    <span class="string">'element-ui'</span>: <span class="string">'ElementUI'</span>,</span><br><span class="line">    <span class="string">'echarts'</span>: <span class="string">'Echarts'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>到这里应该就 OK 了<br>但是我遇到了报错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element is not defined</span><br></pre></td></tr></table></figure></p>
-<p><code>main.js</code> 中注释掉就好了<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// import ElementUI from 'element-ui'</span></span><br></pre></td></tr></table></figure></p>
-<p>对比图片，优化前：<br><img src="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/8F4SEjb8ky.png" alt="优化前"><br>优化后：<br><img src="http://blacker2017.oss-cn-qingdao.aliyuncs.com/user-dir/CWhfFK2ntD.png" alt="优化后"></p>
-<h1 id="2018-4-17-补充"><a href="#2018-4-17-补充" class="headerlink" title="2018-4-17 补充"></a>2018-4-17 补充</h1><p>今天想 <code>vue</code> 和 <code>vue-router</code> 文件不是很大，还是一起打包的好，能少两次请求，于是：<br><code>index.html</code> :<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;script src="https://cdn.bootcss.com/vue/2.5.16/vue.min.js"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- &lt;script src="https://cdn.bootcss.com/vue-router/3.0.1/vue-router.min.js"&gt;&lt;/script&gt; --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/element-ui/2.3.3/index.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><code>webpack.base.conf.js</code> :<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">externals: &#123;</span><br><span class="line">    <span class="comment">// 'vue': 'Vue',</span></span><br><span class="line">    <span class="comment">// 'vue-router': 'VueRouter',</span></span><br><span class="line">    <span class="string">'element-ui'</span>: <span class="string">'ElementUI'</span>,</span><br><span class="line">    <span class="string">'echarts'</span>: <span class="string">'Echarts'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>结果报错：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element is not defined</span><br></pre></td></tr></table></figure></p>
-<p>原因是 <code>element</code> 依赖 <code>vue</code> ，需要在 <code>vue</code> 之后引入，而如果在其之后引入，又会报组件未注册的错误，因此 <code>vue</code> 和 <code>element</code> 必须同时使用CDN，而且 <code>element</code> 需在 <code>vue</code> 之后引入。</p>
-<p>参考<a href="https://orangexc.xyz/2017/05/15/Vue-project-optimization/" target="_blank" rel="noopener">地址</a></p>
+        <p>192.168.1.37/ad_project/index.php/Main/action/<br><a id="more"></a></p>
+<h1 id="大后台数据报表Datareport-Datareport-dataReport"><a href="#大后台数据报表Datareport-Datareport-dataReport" class="headerlink" title="大后台数据报表Datareport/Datareport/dataReport"></a>大后台数据报表Datareport/Datareport/dataReport</h1><p>请求参数：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>string</td>
+<td>yes</td>
+<td>1:今天、2:昨天、3 :7天、4:30天、时间段2018/1/1~2018/2/1</td>
+</tr>
+</tbody>
+</table>
+<p>返回参数：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>int</td>
+<td>yes</td>
+<td>200:成功、202:参数错误等</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>yes</td>
+<td>说明</td>
+</tr>
+<tr>
+<td>data</td>
+<td>array</td>
+<td>yes</td>
+<td>数组见下</td>
+</tr>
+</tbody>
+</table>
+<p>Sum数组：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>impcount</td>
+<td>string</td>
+<td>yes</td>
+<td>总曝光量</td>
+</tr>
+<tr>
+<td>clickcount</td>
+<td>string</td>
+<td>yes</td>
+<td>总点击量</td>
+</tr>
+<tr>
+<td>cos</td>
+<td>string</td>
+<td>yes</td>
+<td>总花费</td>
+</tr>
+<tr>
+<td>Fill_rate</td>
+<td>string</td>
+<td>yes</td>
+<td>填充率</td>
+</tr>
+</tbody>
+</table>
+<p>Row数组：</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>是否必填</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>string</td>
+<td>yes</td>
+<td>日期</td>
+</tr>
+<tr>
+<td>cos</td>
+<td>string</td>
+<td>yes</td>
+<td>花费</td>
+</tr>
+<tr>
+<td>impcount</td>
+<td>string</td>
+<td>yes</td>
+<td>曝光量</td>
+</tr>
+<tr>
+<td>lickcount</td>
+<td>string</td>
+<td>yes</td>
+<td>点击量</td>
+</tr>
+<tr>
+<td>ctr</td>
+<td>string</td>
+<td>yes</td>
+<td>点击率</td>
+</tr>
+<tr>
+<td>click_avg_cos</td>
+<td>string</td>
+<td>yes</td>
+<td>点击均价</td>
+</tr>
+<tr>
+<td>Fillingrate</td>
+<td>string</td>
+<td>yes</td>
+<td>填充率</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -478,7 +607,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vue/" rel="tag"># vue</a>
+            <a href="/tags/work-api/" rel="tag"># work api</a>
           
         </div>
       
@@ -491,8 +620,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/webpack/1-basea.html" rel="next" title="二、搭建基本的前端开发环境">
-                <i class="fa fa-chevron-left"></i> 二、搭建基本的前端开发环境
+              <a href="/study/http2study.html" rel="next" title="HTTP2.0从开天劈地学起">
+                <i class="fa fa-chevron-left"></i> HTTP2.0从开天劈地学起
               </a>
             
           </div>
@@ -500,10 +629,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/skill/how-to-read-github-efficiently.html" rel="prev" title="如何高效阅读Github源代码">
-                如何高效阅读Github源代码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -641,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先在根目录引入CDN"><span class="nav-number">1.</span> <span class="nav-text">首先在根目录引入CDN</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#接着配置-webpack"><span class="nav-number">2.</span> <span class="nav-text">接着配置 webpack</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2018-4-17-补充"><span class="nav-number">3.</span> <span class="nav-text">2018-4-17 补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大后台数据报表Datareport-Datareport-dataReport"><span class="nav-number">1.</span> <span class="nav-text">大后台数据报表Datareport/Datareport/dataReport</span></a></li></ol></div>
             
 
           </div>
