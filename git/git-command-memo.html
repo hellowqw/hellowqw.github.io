@@ -78,7 +78,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="work api," />
+  <meta name="keywords" content="tool," />
 
 
 
@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="192.168.1.37/ad_project/index.php/Main/action/">
-<meta name="keywords" content="work api">
+<meta name="description" content="记录常用git命令">
+<meta name="keywords" content="tool">
 <meta property="og:type" content="article">
-<meta property="og:title" content="大后台接口wzp">
-<meta property="og:url" content="http://hiblacker.github.io/work/2018-04-28apiwzp.html">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="http://hiblacker.github.io/git/git-command-memo.html">
 <meta property="og:site_name" content="Blacker">
-<meta property="og:description" content="192.168.1.37/ad_project/index.php/Main/action/">
+<meta property="og:description" content="记录常用git命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-02T10:35:23.020Z">
+<meta property="og:updated_time" content="2018-05-08T07:46:11.215Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="大后台接口wzp">
-<meta name="twitter:description" content="192.168.1.37/ad_project/index.php/Main/action/">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="记录常用git命令">
 
 
 
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://hiblacker.github.io/work/2018-04-28apiwzp.html"/>
+  <link rel="canonical" href="http://hiblacker.github.io/git/git-command-memo.html"/>
 
 
 
 
 
-  <title>大后台接口wzp | Blacker</title>
+  <title>git常用命令 | Blacker</title>
   
 
 
@@ -283,7 +283,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/work/2018-04-28apiwzp.html">
+    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/git/git-command-memo.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="blacker">
@@ -300,7 +300,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">大后台接口wzp</h2>
+          <h2 class="post-title" itemprop="name headline">git常用命令</h2>
         
 
         <div class="post-meta">
@@ -312,8 +312,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-28T16:12:31+08:00">
-                2018-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-08T15:22:41+08:00">
+                2018-05-08
               </time>
             
 
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-02T18:35:23+08:00">
-                2018-05-02
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-08T15:46:11+08:00">
+                2018-05-08
               </time>
             
           </span>
@@ -347,8 +347,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/work/" itemprop="url" rel="index">
-                    <span itemprop="name">work</span>
+                  <a href="/categories/git/" itemprop="url" rel="index">
+                    <span itemprop="name">git</span>
                   </a>
                 </span>
 
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  144
+                  77
                 </span>
               
 
@@ -420,150 +420,8 @@
       
 
       
-        <p>192.168.1.37/ad_project/index.php/Main/action/<br><a id="more"></a></p>
-<h1 id="大后台数据报表Datareport-Datareport-dataReport"><a href="#大后台数据报表Datareport-Datareport-dataReport" class="headerlink" title="大后台数据报表Datareport/Datareport/dataReport"></a>大后台数据报表Datareport/Datareport/dataReport</h1><p>请求参数：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必填</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>date</td>
-<td>string</td>
-<td>yes</td>
-<td>1:今天、2:昨天、3 :7天、4:30天、时间段2018/1/1~2018/2/1</td>
-</tr>
-</tbody>
-</table>
-<p>返回参数：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必填</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>code</td>
-<td>int</td>
-<td>yes</td>
-<td>200:成功、202:参数错误等</td>
-</tr>
-<tr>
-<td>msg</td>
-<td>string</td>
-<td>yes</td>
-<td>说明</td>
-</tr>
-<tr>
-<td>data</td>
-<td>array</td>
-<td>yes</td>
-<td>数组见下</td>
-</tr>
-</tbody>
-</table>
-<p>Sum数组：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必填</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>impcount</td>
-<td>string</td>
-<td>yes</td>
-<td>总曝光量</td>
-</tr>
-<tr>
-<td>clickcount</td>
-<td>string</td>
-<td>yes</td>
-<td>总点击量</td>
-</tr>
-<tr>
-<td>cos</td>
-<td>string</td>
-<td>yes</td>
-<td>总花费</td>
-</tr>
-<tr>
-<td>Fill_rate</td>
-<td>string</td>
-<td>yes</td>
-<td>填充率</td>
-</tr>
-</tbody>
-</table>
-<p>Row数组：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>类型</th>
-<th>是否必填</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>date</td>
-<td>string</td>
-<td>yes</td>
-<td>日期</td>
-</tr>
-<tr>
-<td>cos</td>
-<td>string</td>
-<td>yes</td>
-<td>花费</td>
-</tr>
-<tr>
-<td>impcount</td>
-<td>string</td>
-<td>yes</td>
-<td>曝光量</td>
-</tr>
-<tr>
-<td>lickcount</td>
-<td>string</td>
-<td>yes</td>
-<td>点击量</td>
-</tr>
-<tr>
-<td>ctr</td>
-<td>string</td>
-<td>yes</td>
-<td>点击率</td>
-</tr>
-<tr>
-<td>click_avg_cos</td>
-<td>string</td>
-<td>yes</td>
-<td>点击均价</td>
-</tr>
-<tr>
-<td>Fillingrate</td>
-<td>string</td>
-<td>yes</td>
-<td>填充率</td>
-</tr>
-</tbody>
-</table>
-
+        <p>记录常用git命令<br><a id="more"></a></p>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建dev分支</span></span><br><span class="line">git branch dev </span><br><span class="line"><span class="comment"># 切换到dev分支</span></span><br><span class="line">git checkout dev </span><br><span class="line"><span class="comment"># 简写：创建并切换到dev分支</span></span><br><span class="line">git checkout -b dev </span><br><span class="line"><span class="comment"># 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"><span class="comment"># 合并分支（在master分支下执行，把dev并入master）</span></span><br><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -607,7 +465,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/work-api/" rel="tag"># work api</a>
+            <a href="/tags/tool/" rel="tag"># tool</a>
           
         </div>
       
@@ -620,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/study/http2study.html" rel="next" title="HTTP2.0从开天劈地学起">
-                <i class="fa fa-chevron-left"></i> HTTP2.0从开天劈地学起
+              <a href="/tool/vscode-settings.html" rel="next" title="我的VSCode前端配置">
+                <i class="fa fa-chevron-left"></i> 我的VSCode前端配置
               </a>
             
           </div>
@@ -630,8 +488,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/tool/vscode-settings.html" rel="prev" title="我的VSCode前端配置">
-                我的VSCode前端配置 <i class="fa fa-chevron-right"></i>
+              <a href="/vue/vue-cli-set.html" rel="prev" title="vue-cli（webpack）增加发布到测试环境">
+                vue-cli（webpack）增加发布到测试环境 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -770,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大后台数据报表Datareport-Datareport-dataReport"><span class="nav-number">1.</span> <span class="nav-text">大后台数据报表Datareport/Datareport/dataReport</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">1.</span> <span class="nav-text">分支</span></a></li></ol></div>
             
 
           </div>
