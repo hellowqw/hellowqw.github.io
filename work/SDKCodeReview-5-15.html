@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib2/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib2/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SDK," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="SDK code review">
+<meta name="keywords" content="SDK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SDKCodeReview-5-15">
+<meta property="og:url" content="http://hiblacker.github.io/work/SDKCodeReview-5-15.html">
+<meta property="og:site_name" content="Blacker">
+<meta property="og:description" content="SDK code review">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-15T11:46:18.288Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SDKCodeReview-5-15">
+<meta name="twitter:description" content="SDK code review">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://hiblacker.github.io/work/SDKCodeReview-5-15.html"/>
+
+
+
+
+
+  <title>SDKCodeReview-5-15 | Blacker</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blacker</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">能工摹形，巧匠窃意。</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/category/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://hiblacker.github.io/work/SDKCodeReview-5-15.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="blacker">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blacker">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">SDKCodeReview-5-15</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-15T18:18:40+08:00">
+                2018-05-15
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-15T19:46:18+08:00">
+                2018-05-15
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/work/" itemprop="url" rel="index">
+                    <span itemprop="name">work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  177
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="SDK-code-review"><a href="#SDK-code-review" class="headerlink" title="SDK code review"></a>SDK code review</h1><a id="more"></a>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">注解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">uu</td>
+<td style="text-align:left">openID</td>
+</tr>
+<tr>
+<td style="text-align:left">ak</td>
+<td style="text-align:left">clientID</td>
+</tr>
+<tr>
+<td style="text-align:left">ev</td>
+<td style="text-align:left">app、page、event等不同环境</td>
+</tr>
+<tr>
+<td style="text-align:left">life</td>
+<td style="text-align:left">不同环境的不同阶段（生命周期）</td>
+</tr>
+<tr>
+<td style="text-align:left">waid</td>
+<td style="text-align:left">（开发者配置的）app_key</td>
+</tr>
+<tr>
+<td style="text-align:left">wst</td>
+<td style="text-align:left">（开发者配置的）app_secret</td>
+</tr>
+<tr>
+<td style="text-align:left">at</td>
+<td style="text-align:left">access_token (Date.now() + random*10000000)</td>
+</tr>
+<tr>
+<td style="text-align:left">wsr</td>
+<td style="text-align:left">page: 入口页；scene：场景值；query：参数</td>
+</tr>
+<tr>
+<td style="text-align:left">st</td>
+<td style="text-align:left">App启动时间（start time）</td>
+</tr>
+<tr>
+<td style="text-align:left">et (<strong>ERROR</strong>)</td>
+<td style="text-align:left">上报时间</td>
+</tr>
+<tr>
+<td style="text-align:left">dr (<strong>需要重写</strong>)</td>
+<td style="text-align:left">停留时长</td>
+</tr>
+<tr>
+<td style="text-align:left">pc (<strong>计划删掉</strong>)</td>
+<td style="text-align:left">page_count</td>
+</tr>
+<tr>
+<td style="text-align:left">fp (<strong>计划删掉</strong>)</td>
+<td style="text-align:left">first_page</td>
+</tr>
+<tr>
+<td style="text-align:left">sc (<strong>计划删掉</strong>)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ifp (<strong>计划删掉</strong>)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">lp</td>
+<td style="text-align:left">last_page   上一页</td>
+</tr>
+<tr>
+<td style="text-align:left">pp</td>
+<td style="text-align:left">present_page   当前页</td>
+</tr>
+<tr>
+<td style="text-align:left">ec</td>
+<td style="text-align:left">error_count   出错数量</td>
+</tr>
+<tr>
+<td style="text-align:left">nt</td>
+<td style="text-align:left">net_type   网络类型</td>
+</tr>
+<tr>
+<td style="text-align:left">pm</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">wsdk</td>
+<td style="text-align:left">基础版本库</td>
+</tr>
+<tr>
+<td style="text-align:left">pr</td>
+<td style="text-align:left">pixel_ratio  像素比</td>
+</tr>
+<tr>
+<td style="text-align:left">ww</td>
+<td style="text-align:left">宽</td>
+</tr>
+<tr>
+<td style="text-align:left">wh</td>
+<td style="text-align:left">高</td>
+</tr>
+<tr>
+<td style="text-align:left">wv</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">lang</td>
+<td style="text-align:left">语言</td>
+</tr>
+<tr>
+<td style="text-align:left">lat</td>
+<td style="text-align:left">纬度</td>
+</tr>
+<tr>
+<td style="text-align:left">lng</td>
+<td style="text-align:left">经度</td>
+</tr>
+<tr>
+<td style="text-align:left">spd</td>
+<td style="text-align:left">速度</td>
+</tr>
+<tr>
+<td style="text-align:left">v</td>
+<td style="text-align:left">(阿拉丁)SDK版本</td>
+</tr>
+<tr>
+<td style="text-align:left">sv</td>
+<td style="text-align:left">手机系统版本</td>
+</tr>
+<tr>
+<td style="text-align:left">wv</td>
+<td style="text-align:left">微信版本</td>
+</tr>
+<tr>
+<td style="text-align:left">la_c</td>
+<td style="text-align:left">launch_count  启动次数</td>
+</tr>
+<tr>
+<td style="text-align:left">as_c</td>
+<td style="text-align:left">show次数</td>
+</tr>
+<tr>
+<td style="text-align:left">ah_c</td>
+<td style="text-align:left">hide次数</td>
+</tr>
+<tr>
+<td style="text-align:left">rq_c</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">ifo</td>
+<td style="text-align:left">新老用户标识</td>
+</tr>
+<tr>
+<td style="text-align:left">sr</td>
+<td style="text-align:left">用户来源</td>
+</tr>
+<tr>
+<td style="text-align:left">ct</td>
+<td style="text-align:left">事件内容</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>赞赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="blacker WeChat Pay"/>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="blacker Alipay"/>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SDK/" rel="tag"># SDK</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/minipro/minipro-intro.html" rel="next" title="小程序SDK">
+                <i class="fa fa-chevron-left"></i> 小程序SDK
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+        
+         <div id="gitment-container"></div>
+      
+        
+  </div>
+
+          
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="blacker" />
+          <p class="site-author-name" itemprop="name">blacker</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/category/index.html">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SDK-code-review"><span class="nav-number">1.</span> <span class="nav-text">SDK code review</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">blacker</span>
+</div>
+<!--<div class='bl_foot_right'>
+  能工摹形，巧匠窃意。
+</div>-->
+
+<!--<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>-->
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib2/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib2/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib2/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib2/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib2/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib2/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+   
+   
+   
+   
+   <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+   <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+   
+       <script type="text/javascript">
+           var gitment = new Gitment({
+               id: window.location.pathname, 
+               owner: 'hiblacker',
+               repo: 'hiblacker.github.io',
+               oauth: {
+                   client_id: '50b67e2b9bb3d24c6ad1',
+                   client_secret: '8158f990db2b870f72de204bf3d9aaf0a41dd35a',
+               }});
+           gitment.render('gitment-container');
+       </script>
+   
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

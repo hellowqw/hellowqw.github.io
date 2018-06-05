@@ -102,7 +102,7 @@
 <meta property="og:site_name" content="Blacker">
 <meta property="og:description" content="记录常用git命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-08T07:46:11.215Z">
+<meta property="og:updated_time" content="2018-05-29T03:36:17.783Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git常用命令">
 <meta name="twitter:description" content="记录常用git命令">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">更新于</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-05-08T15:46:11+08:00">
-                2018-05-08
+              <time title="更新于" itemprop="dateModified" datetime="2018-05-29T11:36:17+08:00">
+                2018-05-29
               </time>
             
           </span>
@@ -383,7 +383,7 @@
                   <span class="post-meta-item-text">字数统计</span>
                 
                 <span title="字数统计">
-                  77
+                  250
                 </span>
               
 
@@ -421,7 +421,12 @@
 
       
         <p>记录常用git命令<br><a id="more"></a></p>
-<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建dev分支</span></span><br><span class="line">git branch dev </span><br><span class="line"><span class="comment"># 切换到dev分支</span></span><br><span class="line">git checkout dev </span><br><span class="line"><span class="comment"># 简写：创建并切换到dev分支</span></span><br><span class="line">git checkout -b dev </span><br><span class="line"><span class="comment"># 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"><span class="comment"># 合并分支（在master分支下执行，把dev并入master）</span></span><br><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建dev分支</span></span><br><span class="line">git branch dev </span><br><span class="line"><span class="comment"># 切换到dev分支</span></span><br><span class="line">git checkout dev </span><br><span class="line"><span class="comment"># 简写：创建并切换到dev分支</span></span><br><span class="line">git checkout -b dev </span><br><span class="line"><span class="comment"># 查看当前分支</span></span><br><span class="line">git branch</span><br><span class="line"><span class="comment"># 合并分支（在master分支下执行，把dev并入master）</span></span><br><span class="line">git merge dev</span><br><span class="line"><span class="comment"># 删除分支</span></span><br><span class="line">git branch -d &lt;branch_name&gt;</span><br><span class="line"><span class="comment"># 删除当前所在的分支</span></span><br><span class="line">git branch -D &lt;branch_name&gt;</span><br><span class="line"><span class="comment"># 删除远程分支</span></span><br><span class="line">git push origin -d &lt;branch_name&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="Command-line-instructions"><a href="#Command-line-instructions" class="headerlink" title="Command line instructions"></a>Command line instructions</h1><p><strong>Git global setup</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "blacker"</span><br><span class="line">git config --global user.email "blacker@aldwx.com"</span><br></pre></td></tr></table></figure></p>
+<p><strong>Create a new repository</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> git@140.143.7.175:ad_team/ad_mini_app.git</span><br><span class="line"><span class="built_in">cd</span> ad_mini_app</span><br><span class="line">touch README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m <span class="string">"add README"</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p><strong>Existing folder</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd existing_folder</span><br><span class="line">git init</span><br><span class="line">git remote add origin git@140.143.7.175:ad_team/ad_mini_app.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m "Initial commit"</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p><strong>Existing Git repository</strong><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd existing_repo</span><br><span class="line">git remote rename origin old-origin</span><br><span class="line">git remote add origin git@140.143.7.175:ad_team/ad_mini_app.git</span><br><span class="line">git push -u origin --all</span><br><span class="line">git push -u origin --tags</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -571,7 +576,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -582,7 +587,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/category/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -593,7 +598,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">18</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -628,7 +633,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">1.</span> <span class="nav-text">分支</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分支"><span class="nav-number">1.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Command-line-instructions"><span class="nav-number">2.</span> <span class="nav-text">Command line instructions</span></a></li></ol></div>
             
 
           </div>
